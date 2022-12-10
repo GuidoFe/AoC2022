@@ -25,12 +25,12 @@ fn main() {
     let mut addr = 1;
     for _ in 0..6 {
         for col in 0..40 {
-            parse_code(&mut addr, lines.next().unwrap());
-            if [addr-1, addr, addr+1].contains(&(col + 1)) {
+            if [addr-1, addr, addr+1].contains(&col) {
                 print!("#");
             } else {
                 print!(".");
             }
+            parse_code(&mut addr, lines.next().unwrap());
         }
         println!();
     }
